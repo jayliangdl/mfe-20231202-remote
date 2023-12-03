@@ -2,7 +2,7 @@ import {useState} from 'react'
 function MyButton(){
   const [count, setCount] = useState(0);
   const handle = () => {
-    setCount(count + 1);
+    setCount(count + 2);
   }
   return (
     <>

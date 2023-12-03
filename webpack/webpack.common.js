@@ -4,6 +4,9 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("../package.json").dependencies;
 
 module.exports = {
+  output: {
+    publicPath: "http://localhost:8082/",
+  },
   entry: path.resolve(__dirname, '..', './src/index.tsx'),  //项目入口
   resolve: {
     extensions: ['.tsx', '.ts', 'jsx','.js'],  //查找顺序.tsx => .ts => .tsx => .js
@@ -64,7 +67,8 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        './MyButton':'./src/MyButton'
+        './MyButton':'./src/MyButton',
+        './VanillaMyButton':'./src/VanillaMyButton.tsx'
       },
       shared: {
         ...deps,

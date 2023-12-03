@@ -1,5 +1,5 @@
-
-import ReactDOM from "react-dom/client";
+import React from "react";
+import { createRoot } from 'react-dom/client';
 import MyButton from "./MyButton";
 
 const App = () => (
@@ -8,6 +8,11 @@ const App = () => (
     <MyButton/>
   </div>
 );
-const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container!);
-root.render(<App/>)
+
+const appEl = document.getElementById("app")
+const root = createRoot(appEl!);
+root.render(<App/>);
+
+
+
+
